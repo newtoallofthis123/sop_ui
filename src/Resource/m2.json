@@ -1,0 +1,8 @@
+{
+    "Sop": {
+        "title": "Some Cool Title",
+        "description": "This is a description of the article.",
+        "comments": "This is a comment on the article.",
+        "author": "Jane Doe"
+    }
+}

@@ -1,0 +1,241 @@
+/* 
+ * Controls the appearance of the menu
+ *
+ * TODO: Remove Absolute positioning from the menu
+ * */
+
+.Oyster ul,
+.Oyster li {
+    list-style: none;
+}
+
+.Oyster .breadcrumbs-selected {
+    width: 100px;
+    padding: 5px;
+    border: 1px solid #000;
+    float: left;
+    height: 20px
+}
+
+.Oyster .breadcrumbs-select-btn {
+    float: left;
+    padding: 5px;
+    border: 1px solid #000;
+    height: 20px;
+    width: 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.Oyster .breadcrumbs {
+    position: relative;
+}
+
+.Oyster .breadcrumbs ul li {
+    padding: 5px;
+}
+
+.Oyster .Toolbar {
+    height: 100%;
+    width: 70px;
+    padding: 20px;
+}
+
+.Oyster .Toolbar>li>.visual {
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin-bottom: 1rem !important;
+    width: 60px;
+}
+
+.Oyster .Toolbar>li.active>.visual {
+    background-color: #343451 !important;
+}
+
+.Oyster .Toolbar>li.active>.visual>.icon {
+    color: #F2F2FE;
+}
+
+.Oyster .Toolbar>li>.visual>.icon {
+    color: #000000;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    display: block;
+}
+
+.Oyster .Toolbar>li>.visual>label,
+.Oyster .Toolbar>li>.visual>i,
+.Oyster .Toolbar>li>ul,
+.Oyster .breadcrumbs {
+    display: none;
+}
+
+.Oyster .breadcrumbs {
+    display: block;
+    position: absolute;
+    left: 3%;
+    border-radius: 10px;
+    border: 1px solid #eeeeee;
+    padding: 0px;
+    width: 300px;
+    background: #ffffff;
+    z-index: 1;
+
+}
+
+.Oyster .breadcrumbs>li ul {
+    margin: 10px;
+    padding: 0px;
+    border-radius: 10px;
+    background: linear-gradient(121deg, #FFF 10.96%, #FFF 72%, #FFF 99.98%);
+    border: 1px solid #eeeeee;
+}
+
+
+.Oyster .breadcrumbs>li .visual {
+    color: #343451;
+    padding: 12px;
+}
+
+.Oyster .header {
+    position: absolute;
+    left: 8%;
+    height: 100%;
+    width: 300px;
+    padding: 20px;
+}
+
+.Oyster .header button {
+    text-align: center;
+    padding: 18px 18px;
+    border-radius: 10px;
+    border: none;
+}
+
+#menuButton span {
+    font-size: 1rem;
+}
+
+li:not(:has(ul)) i.expand {
+    display: none !important;
+}
+
+.Oyster .breadcrumbs li.active:not(:has(ul)) {
+    background-color: #343451 !important;
+    color: #F2F2FE;
+    border-radius: 12px;
+}
+
+.Oyster .breadcrumbs li.active:not(:has(ul)) label,
+.Oyster .breadcrumbs li.active:not(:has(ul)) i {
+    color: #F2F2FE;
+}
+
+.Oyster .breadcrumbs li .visual:hover,
+.Oyster .breadcrumbs li:hover>label,
+.Oyster .breadcrumbs li:hover>i {
+    background-color: #343451 !important;
+    color: #F2F2FE;
+    border-radius: 12px;
+}
+
+.Oyster .breadcrumbs li .visual label,
+.Oyster .breadcrumbs li .visual i {
+    font-size: 1rem;
+}
+
+.Oyster .breadcrumbs li .visual {
+    padding: 12px;
+}
+
+.visual .helper {
+    display: none;
+    position: absolute;
+    width: 200px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    bottom: 45px;
+    padding: 5px;
+    border-radius: 6px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .6s;
+}
+
+.visual:hover .helper {
+    display: block;
+    opacity: 1;
+}
+
+.visual .helper::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+ul.Toolbar li ul {
+    display: block !important;
+}
+
+ul.Toolbar li ul li {
+    display: none;
+}
+
+ul.Toolbar li.active>ul>li {
+    display: block;
+}
+
+ul.Toolbar ul li.active>ul>li {
+    width: 200px;
+
+}
+
+ul.Toolbar ul li.active>.visual,
+ul.Toolbar ul li.selected>.visual {
+    display: none;
+}
+
+ul.Toolbar li.active,
+ul.Toolbar ul li.selected {
+    display: block !important;
+}
+
+ul.Toolbar ul {
+    position: absolute;
+    left: 8%;
+    padding-left: 20px;
+    top: 15%;
+}
+
+ul.Toolbar ul .visual {
+    padding: 15px 10px;
+    font-size: 16px;
+}
+
+.helper img {
+    width: 100%;
+}
+
+.signOut{
+    position: fixed;
+    bottom: 6%;
+    left: 10px;
+    width: 20%;
+    height: 30px;
+}
+
+.signOut button{
+    background-color: inherit;
+    border: none;
+}
+
+.signOut button:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,90 @@
+{
+	"name": "sop/main",
+	"authors": [
+		{
+			"name": "Ishan Joshi",
+			"email": "noobscience@duck.com"
+		},
+		{
+			"name": "Garet Claborn",
+			"email": "garet@orchestrationsyndicate.com"
+		}
+	],
+	"extra": {
+		"installer-types": [
+			"approach",
+			"approach-extension",
+			"approach-community",
+			"approach-wild"
+		],
+		"installer-paths": {
+			"support/lib/{$name}/": [
+				"approach/approach"
+			],
+			"support/lib/extension/{$name}/": [
+				"approach-extension"
+			],
+			"support/lib/community/{$name}/": [
+				"approach-community"
+			],
+			"support/lib/vendor/{$name}/": [
+				"approach/vendor"
+			],
+			"support/lib/wild/{$name}/": [
+				"approach-wild"
+			],
+			"src/Render/": [
+				"climbs/render"
+			],
+			"src/Component/": [
+				"climbs/component"
+			],
+			"src/Composition/": [
+				"climbs/composition"
+			],
+			"src/Imprint/": [
+				"climbs/imprint"
+			],
+			"src/Resource/": [
+				"climbs/resource"
+			],
+			"src/Service/": [
+				"climbs/service"
+			],
+			"static/": [
+				"climbs/static"
+			]
+		}
+	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/TheApproach/Approach"
+		}
+	],
+	"config": {
+		"vendor-dir": "support/lib/vendor",
+		"secure-https": false,
+		"allow-plugins": {
+			"oomphinc/composer-installers-extender": true,
+			"approach/approach": true,
+			"composer/installers": true
+		}
+	},
+	"require": {
+		"composer/installers": "~1.0",
+		"oomphinc/composer-installers-extender": "^2.0",
+		"approach/approach": "dev-master",
+      "ext-mysqli": "*"
+    },
+	"require-dev": {
+		"codeception/codeception": "^5.0",
+		"codeception/module-phpbrowser": "*",
+		"codeception/module-asserts": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"ClimbUI\\": "src/"
+		}
+	}
+}

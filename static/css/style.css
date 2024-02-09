@@ -1,0 +1,108 @@
+/* 
+ * Random CSS
+ * */
+
+#menuButton {
+    background-color: #D3F269;
+    color: black;
+}
+
+.menu button {
+    background-color: rgb(239, 238, 238);
+    color: rgb(3, 3, 3);
+    cursor: pointer;
+    width: 100%;
+}
+
+.menu button#active {
+    background-color: #070707;
+    color: white;
+}
+
+.menu button i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.menu button p {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.signout button {
+    background-color: inherit;
+    border: 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.gray {
+    color: rgb(117, 117, 117);
+}
+
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}
+
+.tab-button {
+    cursor: pointer;
+    padding: 8px 12px;
+    text-align: center;
+    background-color: #cccccc;
+    width: calc(100% / 6);
+}
+
+.tab-button.active {
+    background-color: #999;
+    color: #fff;
+}
+
+.TabBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#Requirements form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.input-group {
+    margin-top: 10px;
+}
+
+#Survey form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.input-group {
+    margin-top: 10px;
+}
+
+/* Hide the checkbox itself */
+.checkbox[type=checkbox] {
+    display: none;
+}
+
+/* Unchecked icon */
+.checkbox[type=checkbox]+label:before {
+    font-family: FontAwesome;
+    content: "\f096"; /* Default unchecked icon */
+    display: inline-block;
+    letter-spacing: 10px; /* Space between checkbox and label */
+}
+
+/* Checked icon */
+.checkbox[type=checkbox][data-task-complete="true"]+label:before {
+    content: "\f046"; /* Custom checked icon */
+    color: green; /* Color for checked icon */
+}

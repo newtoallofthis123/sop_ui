@@ -1,0 +1,7 @@
+For now, the resource layer is mocked using the files
+
+m1.json
+m2.json
+m3.json
+
+In the actual server, there is a mapper that maps unique identifies to the actual resource. The resource is then fetched from the database. The resource is then returned to the client.
