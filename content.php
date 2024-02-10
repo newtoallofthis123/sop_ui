@@ -72,14 +72,13 @@ $body->content = <<<HTML
                                 <li class="control" 
                                     data-api="/server.php"
                                     data-api-method="POST"
-                                    data-intent='{ "REFRESH": { "Sop" : "View" } }'
-                                    data-context='{ "_response_target": "#some_content > div", "sop_id": "second_one"}'
+                                    data-intent='{ "REFRESH": { "Album" : "View" } }'
+                                    data-context='{ "_response_target": "#some_content > div", "album_id": "album"}'
                                 >
                                     <div class="visual">
                                         <input class="checkbox" type="checkbox" data-task-complete="true" />
                                         <label>
-                                            Second One</label
-                                        >
+                                            Images One</label>
                                         <i
                                             class="expand fa fa-angle-right"
                                         ></i>
@@ -88,13 +87,13 @@ $body->content = <<<HTML
                                 <li class="control" 
                                     data-api="/server.php"
                                     data-api-method="POST"
-                                    data-intent='{ "REFRESH": { "Sop" : "View" } }'
-                                    data-context='{ "_response_target": "#some_content > div", "sop_id": "millionaire"}'
+                                    data-intent='{ "REFRESH": { "Board" : "View" } }'
+                                    data-context='{ "_response_target": "#some_content > div", "board_id": "board"}'
                                 >
                                     <div class="visual">
                                         <input class="checkbox" type="checkbox" data-task-complete="true" />
                                         <label
-                                            >Become a Millionaire
+                                            >Board
                                         </label>
                                         <i
                                             class="expand fa fa-angle-right"

@@ -1,0 +1,19 @@
+{
+    "Albums": [
+        {
+            "Title": "Some cool thing",
+            "Description": "Just like a wow",
+            "Image": "/static/img/img1.jpg"
+        },
+        {
+            "Title": "Other cool thing",
+            "Description": "Just like a wow",
+            "Image": "/static/img/img2.jpg"
+        },
+        {
+            "Title": "Other Word",
+            "Description": "Just like a wow",
+            "Image": "/static/img/img3.jpg"
+        }
+    ]
+}

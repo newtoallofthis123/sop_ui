@@ -10,6 +10,8 @@ namespace ClimbUI\Service;
 require_once __DIR__ . '/../../support/lib/vendor/autoload.php';
 require_once __DIR__ . '/../Component/form.php';
 require_once __DIR__ . '/../Component/view.php';
+require_once __DIR__ . '/../Component/display.php';
+require_once __DIR__ . '/../Component/board.php';
 
 use Approach\Render\HTML;
 use Approach\Render\The;
@@ -97,6 +99,8 @@ class Server extends Service
 			"cool_one" => "m1",
 			"second_one" => "m2",
 			"millionaire" => "m3",
+            "album" => "i1",
+            "board" => "c1",
 		];
 
 		return $mapper[$query];
@@ -140,6 +144,41 @@ class Server extends Service
 		]];
 	}
     /**
+     * @return array<int,array<string,array>>
+     * @param mixed $action
+     */
+    public static function AlbumView($action): array{
+        $albumId = $action['album_id'];
+        $fileName = self::dataMapper($albumId) . '.json';
+
+        $jsonFile = file_get_contents(__DIR__ . '/../Resource/' . $fileName);
+        $jsonFile = json_decode($jsonFile, true);
+
+        $tabsInfo = Component\displayAlbums($jsonFile);
+
+        return [[
+            'REFRESH' => ['#some_content > div' => $tabsInfo->render()],
+        ]];
+    }
+    /**
+     * @return array<int,array<string,array>>
+     * @param mixed $action
+     */
+    public static function BoardView($action): array{
+        $boardId = $action['board_id'];
+        $fileName = self::dataMapper($boardId) . '.json';
+
+        $jsonFile = file_get_contents(__DIR__ . '/../Resource/' . $fileName);
+        $jsonFile = json_decode($jsonFile, true);
+
+        $tabsInfo = Component\displayBoards($jsonFile);
+
+        return [[
+            'REFRESH' => ['#some_content > div' => $tabsInfo->render()],
+        ]];
+    }
+    
+    /**
      * @return array<int,array<string,array<string,string>>>
      * @param mixed $action
      */
@@ -174,7 +213,13 @@ class Server extends Service
 		};
 		self::$registrar['Climb']['Ran'] = function ($context) {
 			return self::Ran($context);
-		};
+        };
+        self::$registrar['Album']['View'] = function ($context) {
+            return self::AlbumView($context);
+        };
+        self::$registrar['Board']['View'] = function ($context) {
+            return self::BoardView($context);
+        };
 		parent::__construct($flow, $auto_dispatch, $format_in, $format_out, $target_in, $target_out, $input, $output, $metadata);
 	}
 
@@ -187,7 +232,7 @@ class Server extends Service
 		foreach ($payload[0] as $verb => $intent) {
 			foreach ($intent as $scope => $instruction) {
 				foreach ($instruction as $command => $context) {
-					if ($command == 'Sop') {
+					if ($command == 'Sop' || $command == 'Album' || $command == 'Board') {
 						// print_r($command);
 						$this->payload = self::$registrar[$command][$context]($action);
 					}
