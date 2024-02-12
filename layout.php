@@ -15,6 +15,7 @@ $head[] =
 
 $body = new HTML(tag: 'body', classes: ['Interface']);
 
+$menu = new HTML(tag: 'body');
 
 $webpage[] = $head;
 $webpage[] = $body;
