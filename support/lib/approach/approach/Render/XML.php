@@ -24,7 +24,7 @@ class XML extends Render\Node implements Stream
 		$this->set_render_id();
     }
 
-    public function RenderHead(): Traversable
+    public function RenderHead(): Traversable|\Approach\Render\Stream|string|\Stringable
     {
         yield
             $this->before .

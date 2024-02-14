@@ -38,7 +38,7 @@ trait Properties
         return $this->before . $this->prefix . $this->content . $this->suffix . $this->after;
     }
 
-    function RenderHead(): Traversable
+    function RenderHead(): Traversable|\Approach\Render\Stream|string|\Stringable
     {
         yield
             $this->before .
@@ -52,7 +52,6 @@ trait Properties
                 '>' . $this->prefix            //                :before <input value="abc" />  :after
             );
     }
-
 
     function buildContent()
     {
