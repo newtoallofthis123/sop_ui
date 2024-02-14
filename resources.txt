@@ -1,1 +1,48 @@
-https://docs.google.com/document/d/1DwwiQ8R9VgUgQUlyA00O8s_BiUHGlVhbFcQiprGYQ8U/edit?pli=1
+Oyster Menu
+
+Pearls
+ 
+Goal:
+
+class Pearl extends HTML{
+	constructor(){
+		this.visual = new Visual();
+		this.list[] = new List();
+	}
+}
+
+class Oyster extends HTML{
+	constructor(){
+		this.header = new Header();
+		this.shell[] = new Pearls();
+	}
+}
+
+Add a unique key
+li.pearl > .visual > label
+should have a data-value="label_key"
+ 
+Turn menu into a renderable
+
+Survey: 
+Menu has three main parts: Toolbar, header and active list
+
+	Toolbar would not change in different URLs, besides which icon is "active"
+	Header has at least a back button, breadcrumbs and possibly a user profile
+	Header will need to prepopulate based on URL
+	List could be any <ul> inside the toolbar, that is deeper than 1 level
+	List needs to be populated up to the branch of the current URL + 1 on load
+	Menu as a whole is generic, restylable and thus enforces a general list structure that can align to DOM, URL or natural language outlines
+
+
+Review: 
+and now we review
+
+- there is no past example for Oyster. UserProfile was quite quick to get to a rough alpha version
+
+- budget
+  time: Hard to guess. More than 1 day, less than 1 week.
+  energy: Should take small effort, but lightly challenging. if highly stressful, flag budget exceeded and re-plan
+  resource: mostly compute resources, for the renderables
+
+would you agree/add/dispute any of these steps so far?
