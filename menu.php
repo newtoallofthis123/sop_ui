@@ -54,15 +54,22 @@ $visual1->content = <<<HTML
     <i class="expand fa fa-angle-right"> </i>
 HTML;
 
-$subMenu1[] = $controls1 = new HTML(tag: 'ul', classes: ['controls']);
+$subMenu1[] = $controls = new HTML(tag: 'ul', classes: ['controls']);
 
-// DANGER: DOESN'T WORK YET!
-$controls1[] = $control1 = new HTML(tag: 'li', classes: ['control'], attributes: [
-    'data-intent' => "{\"REFRESH\":{\"Sop\":\"View\"}}",
-    'data-api' => '/server.php',
-    'data-api-method' => 'POST',
-    'data-content' => "{'_response_target':'#some_content > div', 'sop_id': 'cool_one'}"
-]);
+$controls[] = $li1 = new HTML(tag: 'li');
+$li1[] = $visual2 = new HTML(tag: 'div', classes: ['visual']);
+$visual2->content = <<<HTML
+    <input class="checkbox" type="checkbox" data-task-complete="true" />
+    <label>Making Millionaire</label>
+    <i class="expand fa fa-angle-right"></i>
+HTML;
+
+$li1[] = $controls1 = new HTML(tag: 'ul', classes: ['controls']);
+
+$controls1[] = $control1 = new Intent(tag: 'li', classes: ['control'], api: '/server.php', method: 'POST',
+    intent: ['REFRESH' => ['Sop' => 'View']],
+    context: ['_response_target' => '#some_content > div', 'sop_id' => 'cool_one'],
+);
 
 $visual1 = new HTML(tag: 'div', classes: ['visual']);
 $visual1->content = <<<HTML
@@ -75,11 +82,15 @@ $control1[] = $visual1;
 $menu1[] = $childMenu1;
 $toolBar[] = $menu1;
 
-
-$main = new HTML(tag: 'div', classes: ['Stage'], attributes: ['id' => 'main']);
-$main[] = $oyster = new HTML(tag: 'div', classes: ['Oyster ', 'Interface ', 'animate__animated ', 'animate__fadeIn']);
+$body[] = $div123 = new HTML(tag: 'div', classes: ['Stage']);
+$div123[] = $main = new HTML(tag: 'div', classes: ['Screen'], attributes: ['id' => 'main']);
+$main[] = $oyster = new HTML(tag: 'div', classes: ['Oyster ', 'Interface ', 'controls ', 'animate__animated ', 'animate__fadeIn']);
 
 $oyster[] = $headerSection;
 $oyster[] = $toolBar;
 
 $menu[] = $main;
+
+$menu[] = $content = new HTML(tag: 'div', classes: ['ViewPort']);
+$content[] = $someContent = new HTML(tag: 'div', attributes: ['id' => 'some_content']);
+$someContent[] = new HTML(tag: 'div');
